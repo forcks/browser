@@ -1,0 +1,121 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /home/sergey/qtProjects/mobileBrowser/build-mobileBrowser-Android_Qt_6_2_1_Clang_arm64_v8a-Debug/android-build/AndroidManifest.xml:2:1-23:12
+INJECTED from /home/sergey/qtProjects/mobileBrowser/build-mobileBrowser-Android_Qt_6_2_1_Clang_arm64_v8a-Debug/android-build/AndroidManifest.xml:2:1-23:12
+INJECTED from /home/sergey/qtProjects/mobileBrowser/build-mobileBrowser-Android_Qt_6_2_1_Clang_arm64_v8a-Debug/android-build/AndroidManifest.xml:2:1-23:12
+INJECTED from /home/sergey/qtProjects/mobileBrowser/build-mobileBrowser-Android_Qt_6_2_1_Clang_arm64_v8a-Debug/android-build/AndroidManifest.xml:2:1-23:12
+INJECTED from /home/sergey/qtProjects/mobileBrowser/build-mobileBrowser-Android_Qt_6_2_1_Clang_arm64_v8a-Debug/android-build/AndroidManifest.xml:2:1-23:12
+INJECTED from /home/sergey/qtProjects/mobileBrowser/build-mobileBrowser-Android_Qt_6_2_1_Clang_arm64_v8a-Debug/android-build/AndroidManifest.xml:2:1-23:12
+INJECTED from /home/sergey/qtProjects/mobileBrowser/build-mobileBrowser-Android_Qt_6_2_1_Clang_arm64_v8a-Debug/android-build/AndroidManifest.xml:2:1-23:12
+	package
+		ADDED from /home/sergey/qtProjects/mobileBrowser/build-mobileBrowser-Android_Qt_6_2_1_Clang_arm64_v8a-Debug/android-build/AndroidManifest.xml:2:70-109
+		INJECTED from /home/sergey/qtProjects/mobileBrowser/build-mobileBrowser-Android_Qt_6_2_1_Clang_arm64_v8a-Debug/android-build/AndroidManifest.xml
+		INJECTED from /home/sergey/qtProjects/mobileBrowser/build-mobileBrowser-Android_Qt_6_2_1_Clang_arm64_v8a-Debug/android-build/AndroidManifest.xml
+	android:versionName
+		ADDED from /home/sergey/qtProjects/mobileBrowser/build-mobileBrowser-Android_Qt_6_2_1_Clang_arm64_v8a-Debug/android-build/AndroidManifest.xml:2:165-191
+		INJECTED from /home/sergey/qtProjects/mobileBrowser/build-mobileBrowser-Android_Qt_6_2_1_Clang_arm64_v8a-Debug/android-build/AndroidManifest.xml
+		INJECTED from /home/sergey/qtProjects/mobileBrowser/build-mobileBrowser-Android_Qt_6_2_1_Clang_arm64_v8a-Debug/android-build/AndroidManifest.xml
+	xmlns:android
+		ADDED from /home/sergey/qtProjects/mobileBrowser/build-mobileBrowser-Android_Qt_6_2_1_Clang_arm64_v8a-Debug/android-build/AndroidManifest.xml:2:11-69
+	android:versionCode
+		ADDED from /home/sergey/qtProjects/mobileBrowser/build-mobileBrowser-Android_Qt_6_2_1_Clang_arm64_v8a-Debug/android-build/AndroidManifest.xml:2:141-164
+		INJECTED from /home/sergey/qtProjects/mobileBrowser/build-mobileBrowser-Android_Qt_6_2_1_Clang_arm64_v8a-Debug/android-build/AndroidManifest.xml
+		INJECTED from /home/sergey/qtProjects/mobileBrowser/build-mobileBrowser-Android_Qt_6_2_1_Clang_arm64_v8a-Debug/android-build/AndroidManifest.xml
+	android:installLocation
+		ADDED from /home/sergey/qtProjects/mobileBrowser/build-mobileBrowser-Android_Qt_6_2_1_Clang_arm64_v8a-Debug/android-build/AndroidManifest.xml:2:110-140
+uses-permission#android.permission.INTERNET
+ADDED from /home/sergey/qtProjects/mobileBrowser/build-mobileBrowser-Android_Qt_6_2_1_Clang_arm64_v8a-Debug/android-build/AndroidManifest.xml:3:5-67
+	android:name
+		ADDED from /home/sergey/qtProjects/mobileBrowser/build-mobileBrowser-Android_Qt_6_2_1_Clang_arm64_v8a-Debug/android-build/AndroidManifest.xml:3:22-64
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from /home/sergey/qtProjects/mobileBrowser/build-mobileBrowser-Android_Qt_6_2_1_Clang_arm64_v8a-Debug/android-build/AndroidManifest.xml:4:5-81
+	android:name
+		ADDED from /home/sergey/qtProjects/mobileBrowser/build-mobileBrowser-Android_Qt_6_2_1_Clang_arm64_v8a-Debug/android-build/AndroidManifest.xml:4:22-78
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from /home/sergey/qtProjects/mobileBrowser/build-mobileBrowser-Android_Qt_6_2_1_Clang_arm64_v8a-Debug/android-build/AndroidManifest.xml:5:5-79
+	android:name
+		ADDED from /home/sergey/qtProjects/mobileBrowser/build-mobileBrowser-Android_Qt_6_2_1_Clang_arm64_v8a-Debug/android-build/AndroidManifest.xml:5:22-76
+uses-permission#android.permission.ACCESS_FINE_LOCATION
+ADDED from /home/sergey/qtProjects/mobileBrowser/build-mobileBrowser-Android_Qt_6_2_1_Clang_arm64_v8a-Debug/android-build/AndroidManifest.xml:6:5-79
+	android:name
+		ADDED from /home/sergey/qtProjects/mobileBrowser/build-mobileBrowser-Android_Qt_6_2_1_Clang_arm64_v8a-Debug/android-build/AndroidManifest.xml:6:22-76
+uses-sdk
+ADDED from /home/sergey/qtProjects/mobileBrowser/build-mobileBrowser-Android_Qt_6_2_1_Clang_arm64_v8a-Debug/android-build/AndroidManifest.xml:9:5-73
+INJECTED from /home/sergey/qtProjects/mobileBrowser/build-mobileBrowser-Android_Qt_6_2_1_Clang_arm64_v8a-Debug/android-build/AndroidManifest.xml:9:5-73
+INJECTED from /home/sergey/qtProjects/mobileBrowser/build-mobileBrowser-Android_Qt_6_2_1_Clang_arm64_v8a-Debug/android-build/AndroidManifest.xml:9:5-73
+INJECTED from /home/sergey/qtProjects/mobileBrowser/build-mobileBrowser-Android_Qt_6_2_1_Clang_arm64_v8a-Debug/android-build/AndroidManifest.xml:9:5-73
+INJECTED from /home/sergey/qtProjects/mobileBrowser/build-mobileBrowser-Android_Qt_6_2_1_Clang_arm64_v8a-Debug/android-build/AndroidManifest.xml:9:5-73
+	android:targetSdkVersion
+		ADDED from /home/sergey/qtProjects/mobileBrowser/build-mobileBrowser-Android_Qt_6_2_1_Clang_arm64_v8a-Debug/android-build/AndroidManifest.xml:9:42-71
+		INJECTED from /home/sergey/qtProjects/mobileBrowser/build-mobileBrowser-Android_Qt_6_2_1_Clang_arm64_v8a-Debug/android-build/AndroidManifest.xml
+		INJECTED from /home/sergey/qtProjects/mobileBrowser/build-mobileBrowser-Android_Qt_6_2_1_Clang_arm64_v8a-Debug/android-build/AndroidManifest.xml
+	android:minSdkVersion
+		ADDED from /home/sergey/qtProjects/mobileBrowser/build-mobileBrowser-Android_Qt_6_2_1_Clang_arm64_v8a-Debug/android-build/AndroidManifest.xml:9:15-41
+		INJECTED from /home/sergey/qtProjects/mobileBrowser/build-mobileBrowser-Android_Qt_6_2_1_Clang_arm64_v8a-Debug/android-build/AndroidManifest.xml
+		INJECTED from /home/sergey/qtProjects/mobileBrowser/build-mobileBrowser-Android_Qt_6_2_1_Clang_arm64_v8a-Debug/android-build/AndroidManifest.xml
+supports-screens
+ADDED from /home/sergey/qtProjects/mobileBrowser/build-mobileBrowser-Android_Qt_6_2_1_Clang_arm64_v8a-Debug/android-build/AndroidManifest.xml:11:5-135
+	android:largeScreens
+		ADDED from /home/sergey/qtProjects/mobileBrowser/build-mobileBrowser-Android_Qt_6_2_1_Clang_arm64_v8a-Debug/android-build/AndroidManifest.xml:11:49-76
+	android:smallScreens
+		ADDED from /home/sergey/qtProjects/mobileBrowser/build-mobileBrowser-Android_Qt_6_2_1_Clang_arm64_v8a-Debug/android-build/AndroidManifest.xml:11:106-133
+	android:normalScreens
+		ADDED from /home/sergey/qtProjects/mobileBrowser/build-mobileBrowser-Android_Qt_6_2_1_Clang_arm64_v8a-Debug/android-build/AndroidManifest.xml:11:77-105
+	android:anyDensity
+		ADDED from /home/sergey/qtProjects/mobileBrowser/build-mobileBrowser-Android_Qt_6_2_1_Clang_arm64_v8a-Debug/android-build/AndroidManifest.xml:11:23-48
+application
+ADDED from /home/sergey/qtProjects/mobileBrowser/build-mobileBrowser-Android_Qt_6_2_1_Clang_arm64_v8a-Debug/android-build/AndroidManifest.xml:12:5-22:19
+	android:requestLegacyExternalStorage
+		ADDED from /home/sergey/qtProjects/mobileBrowser/build-mobileBrowser-Android_Qt_6_2_1_Clang_arm64_v8a-Debug/android-build/AndroidManifest.xml:12:180-223
+	android:extractNativeLibs
+		ADDED from /home/sergey/qtProjects/mobileBrowser/build-mobileBrowser-Android_Qt_6_2_1_Clang_arm64_v8a-Debug/android-build/AndroidManifest.xml:12:81-113
+	android:label
+		ADDED from /home/sergey/qtProjects/mobileBrowser/build-mobileBrowser-Android_Qt_6_2_1_Clang_arm64_v8a-Debug/android-build/AndroidManifest.xml:12:149-179
+	android:hardwareAccelerated
+		ADDED from /home/sergey/qtProjects/mobileBrowser/build-mobileBrowser-Android_Qt_6_2_1_Clang_arm64_v8a-Debug/android-build/AndroidManifest.xml:12:114-148
+	android:icon
+		ADDED from /home/sergey/qtProjects/mobileBrowser/build-mobileBrowser-Android_Qt_6_2_1_Clang_arm64_v8a-Debug/android-build/AndroidManifest.xml:12:270-299
+	android:allowNativeHeapPointerTagging
+		ADDED from /home/sergey/qtProjects/mobileBrowser/build-mobileBrowser-Android_Qt_6_2_1_Clang_arm64_v8a-Debug/android-build/AndroidManifest.xml:12:224-269
+	android:name
+		ADDED from /home/sergey/qtProjects/mobileBrowser/build-mobileBrowser-Android_Qt_6_2_1_Clang_arm64_v8a-Debug/android-build/AndroidManifest.xml:12:18-80
+activity#org.qtproject.qt.android.bindings.QtActivity
+ADDED from /home/sergey/qtProjects/mobileBrowser/build-mobileBrowser-Android_Qt_6_2_1_Clang_arm64_v8a-Debug/android-build/AndroidManifest.xml:13:9-21:20
+	android:screenOrientation
+		ADDED from /home/sergey/qtProjects/mobileBrowser/build-mobileBrowser-Android_Qt_6_2_1_Clang_arm64_v8a-Debug/android-build/AndroidManifest.xml:13:311-350
+	android:label
+		ADDED from /home/sergey/qtProjects/mobileBrowser/build-mobileBrowser-Android_Qt_6_2_1_Clang_arm64_v8a-Debug/android-build/AndroidManifest.xml:13:249-279
+	android:launchMode
+		ADDED from /home/sergey/qtProjects/mobileBrowser/build-mobileBrowser-Android_Qt_6_2_1_Clang_arm64_v8a-Debug/android-build/AndroidManifest.xml:13:280-310
+	android:configChanges
+		ADDED from /home/sergey/qtProjects/mobileBrowser/build-mobileBrowser-Android_Qt_6_2_1_Clang_arm64_v8a-Debug/android-build/AndroidManifest.xml:13:79-248
+	android:name
+		ADDED from /home/sergey/qtProjects/mobileBrowser/build-mobileBrowser-Android_Qt_6_2_1_Clang_arm64_v8a-Debug/android-build/AndroidManifest.xml:13:19-78
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from /home/sergey/qtProjects/mobileBrowser/build-mobileBrowser-Android_Qt_6_2_1_Clang_arm64_v8a-Debug/android-build/AndroidManifest.xml:14:13-17:29
+action#android.intent.action.MAIN
+ADDED from /home/sergey/qtProjects/mobileBrowser/build-mobileBrowser-Android_Qt_6_2_1_Clang_arm64_v8a-Debug/android-build/AndroidManifest.xml:15:17-68
+	android:name
+		ADDED from /home/sergey/qtProjects/mobileBrowser/build-mobileBrowser-Android_Qt_6_2_1_Clang_arm64_v8a-Debug/android-build/AndroidManifest.xml:15:25-66
+category#android.intent.category.LAUNCHER
+ADDED from /home/sergey/qtProjects/mobileBrowser/build-mobileBrowser-Android_Qt_6_2_1_Clang_arm64_v8a-Debug/android-build/AndroidManifest.xml:16:17-76
+	android:name
+		ADDED from /home/sergey/qtProjects/mobileBrowser/build-mobileBrowser-Android_Qt_6_2_1_Clang_arm64_v8a-Debug/android-build/AndroidManifest.xml:16:27-74
+meta-data#android.app.lib_name
+ADDED from /home/sergey/qtProjects/mobileBrowser/build-mobileBrowser-Android_Qt_6_2_1_Clang_arm64_v8a-Debug/android-build/AndroidManifest.xml:18:13-91
+	android:value
+		ADDED from /home/sergey/qtProjects/mobileBrowser/build-mobileBrowser-Android_Qt_6_2_1_Clang_arm64_v8a-Debug/android-build/AndroidManifest.xml:18:60-89
+	android:name
+		ADDED from /home/sergey/qtProjects/mobileBrowser/build-mobileBrowser-Android_Qt_6_2_1_Clang_arm64_v8a-Debug/android-build/AndroidManifest.xml:18:24-59
+meta-data#android.app.arguments
+ADDED from /home/sergey/qtProjects/mobileBrowser/build-mobileBrowser-Android_Qt_6_2_1_Clang_arm64_v8a-Debug/android-build/AndroidManifest.xml:19:13-79
+	android:value
+		ADDED from /home/sergey/qtProjects/mobileBrowser/build-mobileBrowser-Android_Qt_6_2_1_Clang_arm64_v8a-Debug/android-build/AndroidManifest.xml:19:61-77
+	android:name
+		ADDED from /home/sergey/qtProjects/mobileBrowser/build-mobileBrowser-Android_Qt_6_2_1_Clang_arm64_v8a-Debug/android-build/AndroidManifest.xml:19:24-60
+meta-data#android.app.extract_android_style
+ADDED from /home/sergey/qtProjects/mobileBrowser/build-mobileBrowser-Android_Qt_6_2_1_Clang_arm64_v8a-Debug/android-build/AndroidManifest.xml:20:13-98
+	android:value
+		ADDED from /home/sergey/qtProjects/mobileBrowser/build-mobileBrowser-Android_Qt_6_2_1_Clang_arm64_v8a-Debug/android-build/AndroidManifest.xml:20:73-96
+	android:name
+		ADDED from /home/sergey/qtProjects/mobileBrowser/build-mobileBrowser-Android_Qt_6_2_1_Clang_arm64_v8a-Debug/android-build/AndroidManifest.xml:20:24-72

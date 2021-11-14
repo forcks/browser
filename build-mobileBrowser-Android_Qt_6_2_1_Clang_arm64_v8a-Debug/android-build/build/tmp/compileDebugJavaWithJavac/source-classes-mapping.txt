@@ -1,0 +1,17 @@
+org/qtproject/qt/android/bindings/QtApplication.java
+ org.qtproject.qt.android.bindings.QtApplication
+ org.qtproject.qt.android.bindings.QtApplication$InvokeResult
+org/qtproject/qt/android/bindings/QtServiceLoader.java
+ org.qtproject.qt.android.bindings.QtServiceLoader
+org/qtproject/qt/android/bindings/QtActivityLoader.java
+ org.qtproject.qt.android.bindings.QtActivityLoader
+org/qtproject/qt/android/bindings/QtService.java
+ org.qtproject.qt.android.bindings.QtService
+org/indisStudio/simpleBrowser/BuildConfig.java
+ org.indisStudio.simpleBrowser.BuildConfig
+org/qtproject/qt/android/bindings/QtLoader.java
+ org.qtproject.qt.android.bindings.QtLoader
+ org.qtproject.qt.android.bindings.QtLoader$1
+ org.qtproject.qt.android.bindings.QtLoader$2
+org/qtproject/qt/android/bindings/QtActivity.java
+ org.qtproject.qt.android.bindings.QtActivity
