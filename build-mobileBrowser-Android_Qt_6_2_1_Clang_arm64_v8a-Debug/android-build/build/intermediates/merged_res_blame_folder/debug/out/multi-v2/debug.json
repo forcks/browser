@@ -1,22 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/home/sergey/qtProjects/mobileBrowser/build-mobileBrowser-Android_Qt_6_2_1_Clang_arm64_v8a-Debug/android-build/build/intermediates/res/merged/debug/values-pl_values-pl.arsc.flat",
-            "map": [
-                {
-                    "source": "/home/sergey/Qt/6.2.1/android_arm64_v8a/src/android/java/res/values-pl/strings.xml",
-                    "from": {
-                        "startLines": "2,3",
-                        "startColumns": "4,4",
-                        "startOffsets": "55,154",
-                        "endColumns": "98,96",
-                        "endOffsets": "149,246"
-                    }
-                }
-            ]
-        },
-        {
-            "outputFile": "/home/sergey/qtProjects/mobileBrowser/build-mobileBrowser-Android_Qt_6_2_1_Clang_arm64_v8a-Debug/android-build/build/intermediates/res/merged/debug/values-nb_values-nb.arsc.flat",
+            "outputFile": "/home/sergey/qtProjects/Browser/build-mobileBrowser-Android_Qt_6_2_1_Clang_arm64_v8a-Debug/android-build/build/intermediates/res/merged/debug/values-nb_values-nb.arsc.flat",
             "map": [
                 {
                     "source": "/home/sergey/Qt/6.2.1/android_arm64_v8a/src/android/java/res/values-nb/strings.xml",
@@ -31,7 +16,7 @@
             ]
         },
         {
-            "outputFile": "/home/sergey/qtProjects/mobileBrowser/build-mobileBrowser-Android_Qt_6_2_1_Clang_arm64_v8a-Debug/android-build/build/intermediates/res/merged/debug/values-fr_values-fr.arsc.flat",
+            "outputFile": "/home/sergey/qtProjects/Browser/build-mobileBrowser-Android_Qt_6_2_1_Clang_arm64_v8a-Debug/android-build/build/intermediates/res/merged/debug/values-fr_values-fr.arsc.flat",
             "map": [
                 {
                     "source": "/home/sergey/Qt/6.2.1/android_arm64_v8a/src/android/java/res/values-fr/strings.xml",
@@ -46,7 +31,37 @@
             ]
         },
         {
-            "outputFile": "/home/sergey/qtProjects/mobileBrowser/build-mobileBrowser-Android_Qt_6_2_1_Clang_arm64_v8a-Debug/android-build/build/intermediates/res/merged/debug/values-es_values-es.arsc.flat",
+            "outputFile": "/home/sergey/qtProjects/Browser/build-mobileBrowser-Android_Qt_6_2_1_Clang_arm64_v8a-Debug/android-build/build/intermediates/res/merged/debug/values-zh-rTW_values-zh-rTW.arsc.flat",
+            "map": [
+                {
+                    "source": "/home/sergey/Qt/6.2.1/android_arm64_v8a/src/android/java/res/values-zh-rTW/strings.xml",
+                    "from": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,122",
+                        "endColumns": "66,70",
+                        "endOffsets": "117,188"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "/home/sergey/qtProjects/Browser/build-mobileBrowser-Android_Qt_6_2_1_Clang_arm64_v8a-Debug/android-build/build/intermediates/res/merged/debug/values-ja_values-ja.arsc.flat",
+            "map": [
+                {
+                    "source": "/home/sergey/Qt/6.2.1/android_arm64_v8a/src/android/java/res/values-ja/strings.xml",
+                    "from": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,131",
+                        "endColumns": "75,84",
+                        "endOffsets": "126,211"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "/home/sergey/qtProjects/Browser/build-mobileBrowser-Android_Qt_6_2_1_Clang_arm64_v8a-Debug/android-build/build/intermediates/res/merged/debug/values-es_values-es.arsc.flat",
             "map": [
                 {
                     "source": "/home/sergey/Qt/6.2.1/android_arm64_v8a/src/android/java/res/values-es/strings.xml",
@@ -61,10 +76,55 @@
             ]
         },
         {
-            "outputFile": "/home/sergey/qtProjects/mobileBrowser/build-mobileBrowser-Android_Qt_6_2_1_Clang_arm64_v8a-Debug/android-build/build/intermediates/res/merged/debug/values_values.arsc.flat",
+            "outputFile": "/home/sergey/qtProjects/Browser/build-mobileBrowser-Android_Qt_6_2_1_Clang_arm64_v8a-Debug/android-build/build/intermediates/res/merged/debug/values-el_values-el.arsc.flat",
             "map": [
                 {
-                    "source": "/home/sergey/qtProjects/mobileBrowser/build-mobileBrowser-Android_Qt_6_2_1_Clang_arm64_v8a-Debug/android-build/res/values/libs.xml",
+                    "source": "/home/sergey/Qt/6.2.1/android_arm64_v8a/src/android/java/res/values-el/strings.xml",
+                    "from": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,172",
+                        "endColumns": "116,100",
+                        "endOffsets": "167,268"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "/home/sergey/qtProjects/Browser/build-mobileBrowser-Android_Qt_6_2_1_Clang_arm64_v8a-Debug/android-build/build/intermediates/res/merged/debug/values-pl_values-pl.arsc.flat",
+            "map": [
+                {
+                    "source": "/home/sergey/Qt/6.2.1/android_arm64_v8a/src/android/java/res/values-pl/strings.xml",
+                    "from": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,154",
+                        "endColumns": "98,96",
+                        "endOffsets": "149,246"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "/home/sergey/qtProjects/Browser/build-mobileBrowser-Android_Qt_6_2_1_Clang_arm64_v8a-Debug/android-build/build/intermediates/res/merged/debug/values-pt-rBR_values-pt-rBR.arsc.flat",
+            "map": [
+                {
+                    "source": "/home/sergey/Qt/6.2.1/android_arm64_v8a/src/android/java/res/values-pt-rBR/strings.xml",
+                    "from": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,159",
+                        "endColumns": "103,95",
+                        "endOffsets": "154,250"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "/home/sergey/qtProjects/Browser/build-mobileBrowser-Android_Qt_6_2_1_Clang_arm64_v8a-Debug/android-build/build/intermediates/res/merged/debug/values_values.arsc.flat",
+            "map": [
+                {
+                    "source": "/home/sergey/qtProjects/Browser/build-mobileBrowser-Android_Qt_6_2_1_Clang_arm64_v8a-Debug/android-build/res/values/libs.xml",
                     "from": {
                         "startLines": "4,43,8,49,47,48",
                         "startColumns": "4,4,4,4,4,4",
@@ -102,112 +162,7 @@
             ]
         },
         {
-            "outputFile": "/home/sergey/qtProjects/mobileBrowser/build-mobileBrowser-Android_Qt_6_2_1_Clang_arm64_v8a-Debug/android-build/build/intermediates/res/merged/debug/values-pt-rBR_values-pt-rBR.arsc.flat",
-            "map": [
-                {
-                    "source": "/home/sergey/Qt/6.2.1/android_arm64_v8a/src/android/java/res/values-pt-rBR/strings.xml",
-                    "from": {
-                        "startLines": "2,3",
-                        "startColumns": "4,4",
-                        "startOffsets": "55,159",
-                        "endColumns": "103,95",
-                        "endOffsets": "154,250"
-                    }
-                }
-            ]
-        },
-        {
-            "outputFile": "/home/sergey/qtProjects/mobileBrowser/build-mobileBrowser-Android_Qt_6_2_1_Clang_arm64_v8a-Debug/android-build/build/intermediates/res/merged/debug/values-de_values-de.arsc.flat",
-            "map": [
-                {
-                    "source": "/home/sergey/Qt/6.2.1/android_arm64_v8a/src/android/java/res/values-de/strings.xml",
-                    "from": {
-                        "startLines": "2,3",
-                        "startColumns": "4,4",
-                        "startOffsets": "55,196",
-                        "endColumns": "140,101",
-                        "endOffsets": "191,293"
-                    }
-                }
-            ]
-        },
-        {
-            "outputFile": "/home/sergey/qtProjects/mobileBrowser/build-mobileBrowser-Android_Qt_6_2_1_Clang_arm64_v8a-Debug/android-build/build/intermediates/res/merged/debug/values-in_values-in.arsc.flat",
-            "map": [
-                {
-                    "source": "/home/sergey/Qt/6.2.1/android_arm64_v8a/src/android/java/res/values-in/strings.xml",
-                    "from": {
-                        "startLines": "2,3",
-                        "startColumns": "4,4",
-                        "startOffsets": "55,168",
-                        "endColumns": "112,89",
-                        "endOffsets": "163,253"
-                    }
-                }
-            ]
-        },
-        {
-            "outputFile": "/home/sergey/qtProjects/mobileBrowser/build-mobileBrowser-Android_Qt_6_2_1_Clang_arm64_v8a-Debug/android-build/build/intermediates/res/merged/debug/values-ro_values-ro.arsc.flat",
-            "map": [
-                {
-                    "source": "/home/sergey/Qt/6.2.1/android_arm64_v8a/src/android/java/res/values-ro/strings.xml",
-                    "from": {
-                        "startLines": "2,3",
-                        "startColumns": "4,4",
-                        "startOffsets": "55,174",
-                        "endColumns": "118,102",
-                        "endOffsets": "169,272"
-                    }
-                }
-            ]
-        },
-        {
-            "outputFile": "/home/sergey/qtProjects/mobileBrowser/build-mobileBrowser-Android_Qt_6_2_1_Clang_arm64_v8a-Debug/android-build/build/intermediates/res/merged/debug/values-el_values-el.arsc.flat",
-            "map": [
-                {
-                    "source": "/home/sergey/Qt/6.2.1/android_arm64_v8a/src/android/java/res/values-el/strings.xml",
-                    "from": {
-                        "startLines": "2,3",
-                        "startColumns": "4,4",
-                        "startOffsets": "55,172",
-                        "endColumns": "116,100",
-                        "endOffsets": "167,268"
-                    }
-                }
-            ]
-        },
-        {
-            "outputFile": "/home/sergey/qtProjects/mobileBrowser/build-mobileBrowser-Android_Qt_6_2_1_Clang_arm64_v8a-Debug/android-build/build/intermediates/res/merged/debug/values-zh-rCN_values-zh-rCN.arsc.flat",
-            "map": [
-                {
-                    "source": "/home/sergey/Qt/6.2.1/android_arm64_v8a/src/android/java/res/values-zh-rCN/strings.xml",
-                    "from": {
-                        "startLines": "2,3",
-                        "startColumns": "4,4",
-                        "startOffsets": "55,122",
-                        "endColumns": "66,70",
-                        "endOffsets": "117,188"
-                    }
-                }
-            ]
-        },
-        {
-            "outputFile": "/home/sergey/qtProjects/mobileBrowser/build-mobileBrowser-Android_Qt_6_2_1_Clang_arm64_v8a-Debug/android-build/build/intermediates/res/merged/debug/values-it_values-it.arsc.flat",
-            "map": [
-                {
-                    "source": "/home/sergey/Qt/6.2.1/android_arm64_v8a/src/android/java/res/values-it/strings.xml",
-                    "from": {
-                        "startLines": "2,3",
-                        "startColumns": "4,4",
-                        "startOffsets": "55,168",
-                        "endColumns": "112,100",
-                        "endOffsets": "163,264"
-                    }
-                }
-            ]
-        },
-        {
-            "outputFile": "/home/sergey/qtProjects/mobileBrowser/build-mobileBrowser-Android_Qt_6_2_1_Clang_arm64_v8a-Debug/android-build/build/intermediates/res/merged/debug/values-ru_values-ru.arsc.flat",
+            "outputFile": "/home/sergey/qtProjects/Browser/build-mobileBrowser-Android_Qt_6_2_1_Clang_arm64_v8a-Debug/android-build/build/intermediates/res/merged/debug/values-ru_values-ru.arsc.flat",
             "map": [
                 {
                     "source": "/home/sergey/Qt/6.2.1/android_arm64_v8a/src/android/java/res/values-ru/strings.xml",
@@ -222,22 +177,67 @@
             ]
         },
         {
-            "outputFile": "/home/sergey/qtProjects/mobileBrowser/build-mobileBrowser-Android_Qt_6_2_1_Clang_arm64_v8a-Debug/android-build/build/intermediates/res/merged/debug/values-ja_values-ja.arsc.flat",
+            "outputFile": "/home/sergey/qtProjects/Browser/build-mobileBrowser-Android_Qt_6_2_1_Clang_arm64_v8a-Debug/android-build/build/intermediates/res/merged/debug/values-in_values-in.arsc.flat",
             "map": [
                 {
-                    "source": "/home/sergey/Qt/6.2.1/android_arm64_v8a/src/android/java/res/values-ja/strings.xml",
+                    "source": "/home/sergey/Qt/6.2.1/android_arm64_v8a/src/android/java/res/values-in/strings.xml",
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "4,4",
-                        "startOffsets": "55,131",
-                        "endColumns": "75,84",
-                        "endOffsets": "126,211"
+                        "startOffsets": "55,168",
+                        "endColumns": "112,89",
+                        "endOffsets": "163,253"
                     }
                 }
             ]
         },
         {
-            "outputFile": "/home/sergey/qtProjects/mobileBrowser/build-mobileBrowser-Android_Qt_6_2_1_Clang_arm64_v8a-Debug/android-build/build/intermediates/res/merged/debug/values-se_values-se.arsc.flat",
+            "outputFile": "/home/sergey/qtProjects/Browser/build-mobileBrowser-Android_Qt_6_2_1_Clang_arm64_v8a-Debug/android-build/build/intermediates/res/merged/debug/values-it_values-it.arsc.flat",
+            "map": [
+                {
+                    "source": "/home/sergey/Qt/6.2.1/android_arm64_v8a/src/android/java/res/values-it/strings.xml",
+                    "from": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,168",
+                        "endColumns": "112,100",
+                        "endOffsets": "163,264"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "/home/sergey/qtProjects/Browser/build-mobileBrowser-Android_Qt_6_2_1_Clang_arm64_v8a-Debug/android-build/build/intermediates/res/merged/debug/values-de_values-de.arsc.flat",
+            "map": [
+                {
+                    "source": "/home/sergey/Qt/6.2.1/android_arm64_v8a/src/android/java/res/values-de/strings.xml",
+                    "from": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,196",
+                        "endColumns": "140,101",
+                        "endOffsets": "191,293"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "/home/sergey/qtProjects/Browser/build-mobileBrowser-Android_Qt_6_2_1_Clang_arm64_v8a-Debug/android-build/build/intermediates/res/merged/debug/values-ro_values-ro.arsc.flat",
+            "map": [
+                {
+                    "source": "/home/sergey/Qt/6.2.1/android_arm64_v8a/src/android/java/res/values-ro/strings.xml",
+                    "from": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,174",
+                        "endColumns": "118,102",
+                        "endOffsets": "169,272"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "/home/sergey/qtProjects/Browser/build-mobileBrowser-Android_Qt_6_2_1_Clang_arm64_v8a-Debug/android-build/build/intermediates/res/merged/debug/values-se_values-se.arsc.flat",
             "map": [
                 {
                     "source": "/home/sergey/Qt/6.2.1/android_arm64_v8a/src/android/java/res/values-se/strings.xml",
@@ -252,7 +252,22 @@
             ]
         },
         {
-            "outputFile": "/home/sergey/qtProjects/mobileBrowser/build-mobileBrowser-Android_Qt_6_2_1_Clang_arm64_v8a-Debug/android-build/build/intermediates/res/merged/debug/values-ms_values-ms.arsc.flat",
+            "outputFile": "/home/sergey/qtProjects/Browser/build-mobileBrowser-Android_Qt_6_2_1_Clang_arm64_v8a-Debug/android-build/build/intermediates/res/merged/debug/values-zh-rCN_values-zh-rCN.arsc.flat",
+            "map": [
+                {
+                    "source": "/home/sergey/Qt/6.2.1/android_arm64_v8a/src/android/java/res/values-zh-rCN/strings.xml",
+                    "from": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,122",
+                        "endColumns": "66,70",
+                        "endOffsets": "117,188"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "/home/sergey/qtProjects/Browser/build-mobileBrowser-Android_Qt_6_2_1_Clang_arm64_v8a-Debug/android-build/build/intermediates/res/merged/debug/values-ms_values-ms.arsc.flat",
             "map": [
                 {
                     "source": "/home/sergey/Qt/6.2.1/android_arm64_v8a/src/android/java/res/values-ms/strings.xml",
@@ -267,22 +282,7 @@
             ]
         },
         {
-            "outputFile": "/home/sergey/qtProjects/mobileBrowser/build-mobileBrowser-Android_Qt_6_2_1_Clang_arm64_v8a-Debug/android-build/build/intermediates/res/merged/debug/values-zh-rTW_values-zh-rTW.arsc.flat",
-            "map": [
-                {
-                    "source": "/home/sergey/Qt/6.2.1/android_arm64_v8a/src/android/java/res/values-zh-rTW/strings.xml",
-                    "from": {
-                        "startLines": "2,3",
-                        "startColumns": "4,4",
-                        "startOffsets": "55,122",
-                        "endColumns": "66,70",
-                        "endOffsets": "117,188"
-                    }
-                }
-            ]
-        },
-        {
-            "outputFile": "/home/sergey/qtProjects/mobileBrowser/build-mobileBrowser-Android_Qt_6_2_1_Clang_arm64_v8a-Debug/android-build/build/intermediates/res/merged/debug/values-et_values-et.arsc.flat",
+            "outputFile": "/home/sergey/qtProjects/Browser/build-mobileBrowser-Android_Qt_6_2_1_Clang_arm64_v8a-Debug/android-build/build/intermediates/res/merged/debug/values-et_values-et.arsc.flat",
             "map": [
                 {
                     "source": "/home/sergey/Qt/6.2.1/android_arm64_v8a/src/android/java/res/values-et/strings.xml",
@@ -297,7 +297,7 @@
             ]
         },
         {
-            "outputFile": "/home/sergey/qtProjects/mobileBrowser/build-mobileBrowser-Android_Qt_6_2_1_Clang_arm64_v8a-Debug/android-build/build/intermediates/res/merged/debug/values-fa_values-fa.arsc.flat",
+            "outputFile": "/home/sergey/qtProjects/Browser/build-mobileBrowser-Android_Qt_6_2_1_Clang_arm64_v8a-Debug/android-build/build/intermediates/res/merged/debug/values-fa_values-fa.arsc.flat",
             "map": [
                 {
                     "source": "/home/sergey/Qt/6.2.1/android_arm64_v8a/src/android/java/res/values-fa/strings.xml",
@@ -312,7 +312,7 @@
             ]
         },
         {
-            "outputFile": "/home/sergey/qtProjects/mobileBrowser/build-mobileBrowser-Android_Qt_6_2_1_Clang_arm64_v8a-Debug/android-build/build/intermediates/res/merged/debug/values-nl_values-nl.arsc.flat",
+            "outputFile": "/home/sergey/qtProjects/Browser/build-mobileBrowser-Android_Qt_6_2_1_Clang_arm64_v8a-Debug/android-build/build/intermediates/res/merged/debug/values-nl_values-nl.arsc.flat",
             "map": [
                 {
                     "source": "/home/sergey/Qt/6.2.1/android_arm64_v8a/src/android/java/res/values-nl/strings.xml",

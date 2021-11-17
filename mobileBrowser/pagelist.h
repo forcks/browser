@@ -29,6 +29,10 @@ public:
     void deletePage(int id);
     void changeAddress(QString addr, int id);
 
+    //in permanent memory
+    void savePage(QString fileName);
+    void loadPage(QString fileName);
+
 signals:
     void changeValue();
 

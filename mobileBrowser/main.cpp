@@ -5,6 +5,8 @@
 
 #include <QQmlContext>
 
+#include <QObject>
+
 #include "searchengine.h"
 #include "appengine.h"
 
@@ -41,13 +43,23 @@ int main(int argc, char *argv[])
 
     SearchEngine *searchEngine = &SearchEngine::init();
     engine.rootContext()->setContextProperty("searchEngine",searchEngine);
+    //searchEngine->app = &app;
 
     AppEngine *appEngine = &AppEngine::init();
     engine.rootContext()->setContextProperty("appEngine",appEngine);
 
-
+    //QObject::connect(&app, SIGNAL(onStop()), searchEngine, SLOT(savePageInFile()));
 
     engine.load(url);
 
-    return app.exec();
+    int ret = app.exec();
+    qDebug() << "It works!";
+    qDebug() << "It works!";
+    qDebug() << "It works!";
+    qDebug() << "It works!";
+    qDebug() << "It works!";
+    qDebug() << "It works!";
+    qDebug() << "It works!";
+    qDebug() << "It works!";
+    return ret;
 }

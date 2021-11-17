@@ -5,6 +5,9 @@
 #include <QVariant>
 #include <QVariantList>
 
+#include <QStandardPaths>
+#include <QFile>
+
 
 
 pageList::pageList(QObject *parent) : QObject(parent)
@@ -58,3 +61,56 @@ void pageList::changeAddress(QString addr, int id)
     mItems[id].addr = addr;
     changeValue();
 }
+
+void pageList::savePage(QString fileName)
+{
+    auto pathToDir = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation);
+    QFile fileSavePage(pathToDir+"/"+fileName);
+    if(fileSavePage.open(QIODevice::WriteOnly)){
+        QString context = "";
+        if(!mItems.empty()){
+            for(int i = 0;i<mItems.count();i++){
+                context+=QString::number(mItems[i].id)+"~"+mItems[i].addr+";";
+            }
+            QByteArray contextSave = context.toUtf8();
+            fileSavePage.write(contextSave);
+            //qDebug()<<contextSave;
+        }
+        else{
+            fileSavePage.remove();
+        }
+    }
+
+}
+
+void pageList::loadPage(QString fileName)
+{
+    auto pathToDir = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation);
+    QFile fileSavePage(pathToDir+"/"+fileName);
+    if(fileSavePage.exists() && fileSavePage.open(QIODevice::ReadOnly)){
+        QStringList data = QString::fromUtf8(fileSavePage.readAll()).split(";");
+        for(int i = 0;i<data.count() - 1;i++){
+            QStringList selfData = data[i].split("~");
+            PageItem item;
+            item.id = selfData[0].toInt();
+            item.addr = selfData[1];
+            mItems.append(item);
+            qDebug()<<item.addr;
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

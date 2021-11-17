@@ -14,6 +14,7 @@ ApplicationWindow {
     visible: true
     title: qsTr("Hello World")
 
+
     property int _activeId : 0
 
     Connections{

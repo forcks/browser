@@ -22,8 +22,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_SearchEngine_t {
-    const uint offsetsAndSize[20];
-    char stringdata0[97];
+    const uint offsetsAndSize[22];
+    char stringdata0[112];
 };
 #define QT_MOC_LITERAL(ofs, len) \
     uint(offsetof(qt_meta_stringdata_SearchEngine_t, stringdata0) + ofs), len 
@@ -38,12 +38,13 @@ QT_MOC_LITERAL(41, 8), // "activeId"
 QT_MOC_LITERAL(50, 15), // "compliteAddress"
 QT_MOC_LITERAL(66, 10), // "createPage"
 QT_MOC_LITERAL(77, 8), // "savePage"
-QT_MOC_LITERAL(86, 10) // "deletePage"
+QT_MOC_LITERAL(86, 14), // "savePageInFile"
+QT_MOC_LITERAL(101, 10) // "deletePage"
 
     },
     "SearchEngine\0search\0\0addr\0changeActiveId\0"
     "activeId\0compliteAddress\0createPage\0"
-    "savePage\0deletePage"
+    "savePage\0savePageInFile\0deletePage"
 };
 #undef QT_MOC_LITERAL
 
@@ -53,7 +54,7 @@ static const uint qt_meta_data_SearchEngine[] = {
       10,       // revision
        0,       // classname
        0,    0, // classinfo
-       7,   14, // methods
+       8,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -61,15 +62,16 @@ static const uint qt_meta_data_SearchEngine[] = {
        2,       // signalCount
 
  // signals: name, argc, parameters, tag, flags, initial metatype offsets
-       1,    1,   56,    2, 0x06,    1 /* Public */,
-       4,    1,   59,    2, 0x06,    3 /* Public */,
+       1,    1,   62,    2, 0x06,    1 /* Public */,
+       4,    1,   65,    2, 0x06,    3 /* Public */,
 
  // slots: name, argc, parameters, tag, flags, initial metatype offsets
-       6,    1,   62,    2, 0x0a,    5 /* Public */,
-       6,    2,   65,    2, 0x0a,    7 /* Public */,
-       7,    0,   70,    2, 0x0a,   10 /* Public */,
-       8,    2,   71,    2, 0x0a,   11 /* Public */,
-       9,    1,   76,    2, 0x0a,   14 /* Public */,
+       6,    1,   68,    2, 0x0a,    5 /* Public */,
+       6,    2,   71,    2, 0x0a,    7 /* Public */,
+       7,    0,   76,    2, 0x0a,   10 /* Public */,
+       8,    2,   77,    2, 0x0a,   11 /* Public */,
+       9,    0,   82,    2, 0x0a,   14 /* Public */,
+      10,    1,   83,    2, 0x0a,   15 /* Public */,
 
  // signals: parameters
     QMetaType::Void, QMetaType::QString,    3,
@@ -80,6 +82,7 @@ static const uint qt_meta_data_SearchEngine[] = {
     QMetaType::Void, QMetaType::QString, QMetaType::Int,    3,    5,
     QMetaType::Void,
     QMetaType::Void, QMetaType::QString, QMetaType::Int,    3,    5,
+    QMetaType::Void,
     QMetaType::Void, QMetaType::Int,    5,
 
        0        // eod
@@ -97,7 +100,8 @@ void SearchEngine::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id
         case 3: _t->compliteAddress((*reinterpret_cast< QString(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2]))); break;
         case 4: _t->createPage(); break;
         case 5: _t->savePage((*reinterpret_cast< QString(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2]))); break;
-        case 6: _t->deletePage((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 6: _t->savePageInFile(); break;
+        case 7: _t->deletePage((*reinterpret_cast< int(*)>(_a[1]))); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
@@ -127,7 +131,7 @@ const QMetaObject SearchEngine::staticMetaObject = { {
     nullptr,
 qt_incomplete_metaTypeArray<qt_meta_stringdata_SearchEngine_t
 , QtPrivate::TypeAndForceComplete<SearchEngine, std::true_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<QString, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<int, std::false_type>
-, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<QString, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<QString, std::false_type>, QtPrivate::TypeAndForceComplete<int, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<QString, std::false_type>, QtPrivate::TypeAndForceComplete<int, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<int, std::false_type>
+, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<QString, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<QString, std::false_type>, QtPrivate::TypeAndForceComplete<int, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<QString, std::false_type>, QtPrivate::TypeAndForceComplete<int, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<int, std::false_type>
 
 
 >,
@@ -154,13 +158,13 @@ int SearchEngine::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 7)
+        if (_id < 8)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 7;
+        _id -= 8;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 7)
+        if (_id < 8)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 7;
+        _id -= 8;
     }
     return _id;
 }

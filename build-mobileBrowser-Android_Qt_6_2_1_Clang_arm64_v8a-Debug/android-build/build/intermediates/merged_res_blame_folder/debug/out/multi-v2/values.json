@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/home/sergey/qtProjects/mobileBrowser/build-mobileBrowser-Android_Qt_6_2_1_Clang_arm64_v8a-Debug/android-build/build/intermediates/incremental/mergeDebugResources/merged.dir/values/values.xml",
+            "outputFile": "/home/sergey/qtProjects/Browser/build-mobileBrowser-Android_Qt_6_2_1_Clang_arm64_v8a-Debug/android-build/build/intermediates/incremental/mergeDebugResources/merged.dir/values/values.xml",
             "map": [
                 {
-                    "source": "/home/sergey/qtProjects/mobileBrowser/build-mobileBrowser-Android_Qt_6_2_1_Clang_arm64_v8a-Debug/android-build/res/values/libs.xml",
+                    "source": "/home/sergey/qtProjects/Browser/build-mobileBrowser-Android_Qt_6_2_1_Clang_arm64_v8a-Debug/android-build/res/values/libs.xml",
                     "from": {
                         "startLines": "4,43,8,49,47,48",
                         "startColumns": "4,4,4,4,4,4",
