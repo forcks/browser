@@ -14,3 +14,13 @@ void AppEngine::mainWindow()
 {
     emit goToMainWindow();
 }
+
+void AppEngine::menu()
+{
+    emit goToMenu();
+}
+
+void AppEngine::history()
+{
+    emit goToHistory();
+}

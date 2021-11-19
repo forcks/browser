@@ -6,12 +6,12 @@
                 {
                     "source": "/home/sergey/qtProjects/Browser/build-mobileBrowser-Android_Qt_6_2_1_Clang_arm64_v8a-Debug/android-build/res/values/libs.xml",
                     "from": {
-                        "startLines": "4,43,8,49,47,48",
-                        "startColumns": "4,4,4,4,4,4",
-                        "startOffsets": "148,2005,203,2279,2182,2231",
-                        "endLines": "6,45,41,49,47,48",
-                        "endColumns": "12,12,12,50,48,47",
-                        "endOffsets": "197,2176,1999,2325,2226,2274"
+                        "startLines": "-1,-1,8,-1,-1,-1",
+                        "startColumns": "-1,-1,4,-1,-1,-1",
+                        "startOffsets": "-1,-1,203,-1,-1,-1",
+                        "endLines": "-1,-1,41,-1,-1,-1",
+                        "endColumns": "-1,-1,12,-1,-1,-1",
+                        "endOffsets": "-1,-1,1999,-1,-1,-1"
                     },
                     "to": {
                         "startLines": "2,5,8,42,44,46",
@@ -25,11 +25,9 @@
                 {
                     "source": "/home/sergey/Qt/6.2.1/android_arm64_v8a/src/android/java/res/values/strings.xml",
                     "from": {
-                        "startLines": "3,4",
-                        "startColumns": "4,4",
-                        "startOffsets": "85,193",
-                        "endColumns": "107,97",
-                        "endOffsets": "188,286"
+                        "startLines": "-1,-1",
+                        "startColumns": "-1,-1",
+                        "startOffsets": "-1,-1"
                     },
                     "to": {
                         "startLines": "43,45",

@@ -53,16 +53,22 @@ OBJECTS_DIR   = ./
 ####### Files
 
 SOURCES       = ../mobileBrowser/appengine.cpp \
+		../mobileBrowser/historylist.cpp \
+		../mobileBrowser/historymodel.cpp \
 		../mobileBrowser/main.cpp \
 		../mobileBrowser/pagelist.cpp \
 		../mobileBrowser/pagemodel.cpp \
 		../mobileBrowser/searchengine.cpp qrc_qml.cpp \
 		qrc_icons.cpp \
 		moc_appengine.cpp \
+		moc_historylist.cpp \
+		moc_historymodel.cpp \
 		moc_pagelist.cpp \
 		moc_pagemodel.cpp \
 		moc_searchengine.cpp
 OBJECTS       = appengine.o \
+		historylist.o \
+		historymodel.o \
 		main.o \
 		pagelist.o \
 		pagemodel.o \
@@ -70,6 +76,8 @@ OBJECTS       = appengine.o \
 		qrc_qml.o \
 		qrc_icons.o \
 		moc_appengine.o \
+		moc_historylist.o \
+		moc_historymodel.o \
 		moc_pagelist.o \
 		moc_pagemodel.o \
 		moc_searchengine.o
@@ -259,6 +267,7 @@ DIST          = ../mobileBrowser/android/AndroidManifest.xml \
 		../../../Qt/6.2.1/android_arm64_v8a/mkspecs/android-clang/qmake.conf \
 		../../../Qt/6.2.1/android_arm64_v8a/mkspecs/features/spec_post.prf \
 		../../../Qt/6.2.1/android_arm64_v8a/mkspecs/features/android/spec_post.prf \
+		../mobileBrowser/.qmake.stash \
 		../../../Qt/6.2.1/android_arm64_v8a/mkspecs/features/exclusive_builds.prf \
 		../../../Qt/6.2.1/android_arm64_v8a/mkspecs/features/toolchain.prf \
 		../../../Qt/6.2.1/android_arm64_v8a/mkspecs/features/default_pre.prf \
@@ -283,9 +292,13 @@ DIST          = ../mobileBrowser/android/AndroidManifest.xml \
 		../../../Qt/6.2.1/android_arm64_v8a/mkspecs/features/yacc.prf \
 		../../../Qt/6.2.1/android_arm64_v8a/mkspecs/features/lex.prf \
 		../mobileBrowser/mobileBrowser.pro ../mobileBrowser/appengine.h \
+		../mobileBrowser/historylist.h \
+		../mobileBrowser/historymodel.h \
 		../mobileBrowser/pagelist.h \
 		../mobileBrowser/pagemodel.h \
 		../mobileBrowser/searchengine.h ../mobileBrowser/appengine.cpp \
+		../mobileBrowser/historylist.cpp \
+		../mobileBrowser/historymodel.cpp \
 		../mobileBrowser/main.cpp \
 		../mobileBrowser/pagelist.cpp \
 		../mobileBrowser/pagemodel.cpp \
@@ -479,6 +492,7 @@ Makefile: ../mobileBrowser/mobileBrowser.pro ../../../Qt/6.2.1/android_arm64_v8a
 		../../../Qt/6.2.1/android_arm64_v8a/mkspecs/android-clang/qmake.conf \
 		../../../Qt/6.2.1/android_arm64_v8a/mkspecs/features/spec_post.prf \
 		../../../Qt/6.2.1/android_arm64_v8a/mkspecs/features/android/spec_post.prf \
+		.qmake.stash \
 		../../../Qt/6.2.1/android_arm64_v8a/mkspecs/features/exclusive_builds.prf \
 		../../../Qt/6.2.1/android_arm64_v8a/mkspecs/features/toolchain.prf \
 		../../../Qt/6.2.1/android_arm64_v8a/mkspecs/features/default_pre.prf \
@@ -692,6 +706,7 @@ Makefile: ../mobileBrowser/mobileBrowser.pro ../../../Qt/6.2.1/android_arm64_v8a
 ../../../Qt/6.2.1/android_arm64_v8a/mkspecs/android-clang/qmake.conf:
 ../../../Qt/6.2.1/android_arm64_v8a/mkspecs/features/spec_post.prf:
 ../../../Qt/6.2.1/android_arm64_v8a/mkspecs/features/android/spec_post.prf:
+.qmake.stash:
 ../../../Qt/6.2.1/android_arm64_v8a/mkspecs/features/exclusive_builds.prf:
 ../../../Qt/6.2.1/android_arm64_v8a/mkspecs/features/toolchain.prf:
 ../../../Qt/6.2.1/android_arm64_v8a/mkspecs/features/default_pre.prf:
@@ -742,8 +757,8 @@ distdir: FORCE
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents ../mobileBrowser/qml.qrc ../mobileBrowser/icons.qrc $(DISTDIR)/
 	$(COPY_FILE) --parents ../../../Qt/6.2.1/android_arm64_v8a/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../mobileBrowser/appengine.h ../mobileBrowser/pagelist.h ../mobileBrowser/pagemodel.h ../mobileBrowser/searchengine.h $(DISTDIR)/
-	$(COPY_FILE) --parents ../mobileBrowser/appengine.cpp ../mobileBrowser/main.cpp ../mobileBrowser/pagelist.cpp ../mobileBrowser/pagemodel.cpp ../mobileBrowser/searchengine.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../mobileBrowser/appengine.h ../mobileBrowser/historylist.h ../mobileBrowser/historymodel.h ../mobileBrowser/pagelist.h ../mobileBrowser/pagemodel.h ../mobileBrowser/searchengine.h $(DISTDIR)/
+	$(COPY_FILE) --parents ../mobileBrowser/appengine.cpp ../mobileBrowser/historylist.cpp ../mobileBrowser/historymodel.cpp ../mobileBrowser/main.cpp ../mobileBrowser/pagelist.cpp ../mobileBrowser/pagemodel.cpp ../mobileBrowser/searchengine.cpp $(DISTDIR)/
 
 
 clean: compiler_clean 
@@ -781,7 +796,11 @@ compiler_rcc_clean:
 	-$(DEL_FILE) qrc_qml.cpp qrc_icons.cpp
 qrc_qml.cpp: ../mobileBrowser/qml.qrc \
 		../../../Qt/6.2.1/gcc_64/libexec/rcc \
-		../mobileBrowser/main.qml
+		../mobileBrowser/MainWindow.qml \
+		../mobileBrowser/main.qml \
+		../mobileBrowser/MenuWindow.qml \
+		../mobileBrowser/HistoryWindow.qml \
+		../mobileBrowser/Pages.qml
 	/home/sergey/Qt/6.2.1/gcc_64/libexec/rcc -name qml ../mobileBrowser/qml.qrc -o qrc_qml.cpp
 
 qrc_icons.cpp: ../mobileBrowser/icons.qrc \
@@ -798,9 +817,9 @@ compiler_moc_predefs_clean:
 moc_predefs.h: ../../../Qt/6.2.1/android_arm64_v8a/mkspecs/features/data/dummy.cpp
 	/home/sergey/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ -target aarch64-linux-android23 -fno-limit-debug-info -fPIC -fstack-protector-strong -DANDROID -g -std=gnu++1z -Wall -W -dM -E -o moc_predefs.h ../../../Qt/6.2.1/android_arm64_v8a/mkspecs/features/data/dummy.cpp
 
-compiler_moc_header_make_all: moc_appengine.cpp moc_pagelist.cpp moc_pagemodel.cpp moc_searchengine.cpp
+compiler_moc_header_make_all: moc_appengine.cpp moc_historylist.cpp moc_historymodel.cpp moc_pagelist.cpp moc_pagemodel.cpp moc_searchengine.cpp
 compiler_moc_header_clean:
-	-$(DEL_FILE) moc_appengine.cpp moc_pagelist.cpp moc_pagemodel.cpp moc_searchengine.cpp
+	-$(DEL_FILE) moc_appengine.cpp moc_historylist.cpp moc_historymodel.cpp moc_pagelist.cpp moc_pagemodel.cpp moc_searchengine.cpp
 moc_appengine.cpp: ../mobileBrowser/appengine.h \
 		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/QObject \
 		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qobject.h \
@@ -873,6 +892,166 @@ moc_appengine.cpp: ../mobileBrowser/appengine.h \
 		moc_predefs.h \
 		../../../Qt/6.2.1/gcc_64/libexec/moc
 	/home/sergey/Qt/6.2.1/gcc_64/libexec/moc $(DEFINES) --include /home/sergey/qtProjects/Browser/build-mobileBrowser-Android_Qt_6_2_1_Clang_arm64_v8a-Debug/moc_predefs.h -I/home/sergey/Qt/6.2.1/android_arm64_v8a/mkspecs/android-clang -I/home/sergey/qtProjects/Browser/mobileBrowser -I/home/sergey/Qt/6.2.1/android_arm64_v8a/include -I/home/sergey/Qt/6.2.1/android_arm64_v8a/include/QtQuick -I/home/sergey/Qt/6.2.1/android_arm64_v8a/include/QtOpenGL -I/home/sergey/Qt/6.2.1/android_arm64_v8a/include/QtWebView -I/home/sergey/Qt/6.2.1/android_arm64_v8a/include/QtGui -I/home/sergey/Qt/6.2.1/android_arm64_v8a/include/QtQmlModels -I/home/sergey/Qt/6.2.1/android_arm64_v8a/include/QtQml -I/home/sergey/Qt/6.2.1/android_arm64_v8a/include/QtNetwork -I/home/sergey/Qt/6.2.1/android_arm64_v8a/include/QtCore -I. -I/usr/include/c++/11 -I/usr/include/x86_64-linux-gnu/c++/11 -I/usr/include/c++/11/backward -I/usr/local/include -I/home/sergey/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/lib64/clang/9.0.8/include -I/usr/include/x86_64-linux-gnu -I/usr/include ../mobileBrowser/appengine.h -o moc_appengine.cpp
+
+moc_historylist.cpp: ../mobileBrowser/historylist.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/QObject \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qobject.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qobjectdefs.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qnamespace.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qglobal.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qconfig-bootstrapped.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qconfig.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qtcore-config.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qsystemdetection.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qprocessordetection.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qcompilerdetection.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qtypeinfo.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qcontainerfwd.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qsysinfo.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qlogging.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qflags.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qatomic.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qbasicatomic.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qatomic_bootstrap.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qgenericatomic.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qatomic_cxx11.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qglobalstatic.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qnumeric.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qversiontagging.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qtmetamacros.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qobjectdefs_impl.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qstring.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qchar.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qstringview.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qbytearray.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qrefcount.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qarraydata.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qpair.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qarraydatapointer.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qarraydataops.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qcontainertools_impl.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qbytearrayalgorithms.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qbytearrayview.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qstringliteral.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qstringalgorithms.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qanystringview.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qutf8stringview.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qstringtokenizer.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qstringbuilder.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qlist.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qhashfunctions.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qiterator.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qbytearraylist.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qstringlist.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qalgorithms.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qstringmatcher.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qcoreevent.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qscopedpointer.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qmetatype.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qcompare.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qvarlengtharray.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qscopeguard.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qdatastream.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qiodevicebase.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qiterable.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qmetacontainer.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qcontainerinfo.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qtaggedpointer.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qmath.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qobject_impl.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qproperty.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qshareddata.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qpropertyprivate.h \
+		moc_predefs.h \
+		../../../Qt/6.2.1/gcc_64/libexec/moc
+	/home/sergey/Qt/6.2.1/gcc_64/libexec/moc $(DEFINES) --include /home/sergey/qtProjects/Browser/build-mobileBrowser-Android_Qt_6_2_1_Clang_arm64_v8a-Debug/moc_predefs.h -I/home/sergey/Qt/6.2.1/android_arm64_v8a/mkspecs/android-clang -I/home/sergey/qtProjects/Browser/mobileBrowser -I/home/sergey/Qt/6.2.1/android_arm64_v8a/include -I/home/sergey/Qt/6.2.1/android_arm64_v8a/include/QtQuick -I/home/sergey/Qt/6.2.1/android_arm64_v8a/include/QtOpenGL -I/home/sergey/Qt/6.2.1/android_arm64_v8a/include/QtWebView -I/home/sergey/Qt/6.2.1/android_arm64_v8a/include/QtGui -I/home/sergey/Qt/6.2.1/android_arm64_v8a/include/QtQmlModels -I/home/sergey/Qt/6.2.1/android_arm64_v8a/include/QtQml -I/home/sergey/Qt/6.2.1/android_arm64_v8a/include/QtNetwork -I/home/sergey/Qt/6.2.1/android_arm64_v8a/include/QtCore -I. -I/usr/include/c++/11 -I/usr/include/x86_64-linux-gnu/c++/11 -I/usr/include/c++/11/backward -I/usr/local/include -I/home/sergey/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/lib64/clang/9.0.8/include -I/usr/include/x86_64-linux-gnu -I/usr/include ../mobileBrowser/historylist.h -o moc_historylist.cpp
+
+moc_historymodel.cpp: ../mobileBrowser/historymodel.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/QAbstractListModel \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qabstractitemmodel.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qhash.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qcontainertools_impl.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qglobal.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qconfig-bootstrapped.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qconfig.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qtcore-config.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qsystemdetection.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qprocessordetection.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qcompilerdetection.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qtypeinfo.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qcontainerfwd.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qsysinfo.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qlogging.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qflags.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qatomic.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qbasicatomic.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qatomic_bootstrap.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qgenericatomic.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qatomic_cxx11.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qglobalstatic.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qnumeric.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qversiontagging.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qhashfunctions.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qstring.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qchar.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qstringview.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qbytearray.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qrefcount.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qnamespace.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qtmetamacros.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qarraydata.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qpair.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qarraydatapointer.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qarraydataops.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qbytearrayalgorithms.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qbytearrayview.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qstringliteral.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qstringalgorithms.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qanystringview.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qutf8stringview.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qstringtokenizer.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qstringbuilder.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qiterator.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qlist.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qbytearraylist.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qstringlist.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qalgorithms.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qstringmatcher.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qmath.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qobject.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qobjectdefs.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qobjectdefs_impl.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qcoreevent.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qscopedpointer.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qmetatype.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qcompare.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qvarlengtharray.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qscopeguard.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qdatastream.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qiodevicebase.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qiterable.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qmetacontainer.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qcontainerinfo.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qtaggedpointer.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qobject_impl.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qproperty.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qshareddata.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qpropertyprivate.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qvariant.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qmap.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qshareddata_impl.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qdebug.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qtextstream.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qstringconverter.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qset.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qcontiguouscache.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qsharedpointer.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qsharedpointer_impl.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/QObject \
+		../mobileBrowser/historylist.h \
+		moc_predefs.h \
+		../../../Qt/6.2.1/gcc_64/libexec/moc
+	/home/sergey/Qt/6.2.1/gcc_64/libexec/moc $(DEFINES) --include /home/sergey/qtProjects/Browser/build-mobileBrowser-Android_Qt_6_2_1_Clang_arm64_v8a-Debug/moc_predefs.h -I/home/sergey/Qt/6.2.1/android_arm64_v8a/mkspecs/android-clang -I/home/sergey/qtProjects/Browser/mobileBrowser -I/home/sergey/Qt/6.2.1/android_arm64_v8a/include -I/home/sergey/Qt/6.2.1/android_arm64_v8a/include/QtQuick -I/home/sergey/Qt/6.2.1/android_arm64_v8a/include/QtOpenGL -I/home/sergey/Qt/6.2.1/android_arm64_v8a/include/QtWebView -I/home/sergey/Qt/6.2.1/android_arm64_v8a/include/QtGui -I/home/sergey/Qt/6.2.1/android_arm64_v8a/include/QtQmlModels -I/home/sergey/Qt/6.2.1/android_arm64_v8a/include/QtQml -I/home/sergey/Qt/6.2.1/android_arm64_v8a/include/QtNetwork -I/home/sergey/Qt/6.2.1/android_arm64_v8a/include/QtCore -I. -I/usr/include/c++/11 -I/usr/include/x86_64-linux-gnu/c++/11 -I/usr/include/c++/11/backward -I/usr/local/include -I/home/sergey/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/lib64/clang/9.0.8/include -I/usr/include/x86_64-linux-gnu -I/usr/include ../mobileBrowser/historymodel.h -o moc_historymodel.cpp
 
 moc_pagelist.cpp: ../mobileBrowser/pagelist.h \
 		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/QObject \
@@ -1215,6 +1394,179 @@ appengine.o: ../mobileBrowser/appengine.cpp ../mobileBrowser/appengine.h \
 		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qshareddata.h \
 		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qpropertyprivate.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o appengine.o ../mobileBrowser/appengine.cpp
+
+historylist.o: ../mobileBrowser/historylist.cpp ../mobileBrowser/historylist.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/QObject \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qobject.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qobjectdefs.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qnamespace.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qglobal.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qconfig-bootstrapped.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qconfig.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qtcore-config.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qsystemdetection.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qprocessordetection.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qcompilerdetection.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qtypeinfo.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qcontainerfwd.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qsysinfo.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qlogging.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qflags.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qatomic.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qbasicatomic.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qatomic_bootstrap.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qgenericatomic.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qatomic_cxx11.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qglobalstatic.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qnumeric.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qversiontagging.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qtmetamacros.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qobjectdefs_impl.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qstring.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qchar.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qstringview.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qbytearray.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qrefcount.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qarraydata.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qpair.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qarraydatapointer.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qarraydataops.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qcontainertools_impl.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qbytearrayalgorithms.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qbytearrayview.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qstringliteral.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qstringalgorithms.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qanystringview.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qutf8stringview.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qstringtokenizer.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qstringbuilder.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qlist.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qhashfunctions.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qiterator.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qbytearraylist.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qstringlist.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qalgorithms.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qstringmatcher.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qcoreevent.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qscopedpointer.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qmetatype.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qcompare.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qvarlengtharray.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qscopeguard.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qdatastream.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qiodevicebase.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qiterable.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qmetacontainer.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qcontainerinfo.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qtaggedpointer.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qmath.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qobject_impl.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qproperty.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qshareddata.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qpropertyprivate.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/QStandardPaths \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qstandardpaths.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/QFile \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qfile.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qfiledevice.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qiodevice.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/QDebug \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qdebug.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qhash.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qmap.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qshareddata_impl.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qtextstream.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qstringconverter.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qset.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qcontiguouscache.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qsharedpointer.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qsharedpointer_impl.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o historylist.o ../mobileBrowser/historylist.cpp
+
+historymodel.o: ../mobileBrowser/historymodel.cpp ../mobileBrowser/historymodel.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/QAbstractListModel \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qabstractitemmodel.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qhash.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qcontainertools_impl.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qglobal.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qconfig-bootstrapped.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qconfig.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qtcore-config.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qsystemdetection.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qprocessordetection.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qcompilerdetection.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qtypeinfo.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qcontainerfwd.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qsysinfo.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qlogging.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qflags.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qatomic.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qbasicatomic.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qatomic_bootstrap.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qgenericatomic.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qatomic_cxx11.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qglobalstatic.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qnumeric.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qversiontagging.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qhashfunctions.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qstring.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qchar.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qstringview.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qbytearray.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qrefcount.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qnamespace.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qtmetamacros.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qarraydata.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qpair.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qarraydatapointer.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qarraydataops.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qbytearrayalgorithms.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qbytearrayview.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qstringliteral.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qstringalgorithms.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qanystringview.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qutf8stringview.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qstringtokenizer.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qstringbuilder.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qiterator.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qlist.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qbytearraylist.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qstringlist.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qalgorithms.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qstringmatcher.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qmath.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qobject.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qobjectdefs.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qobjectdefs_impl.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qcoreevent.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qscopedpointer.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qmetatype.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qcompare.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qvarlengtharray.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qscopeguard.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qdatastream.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qiodevicebase.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qiterable.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qmetacontainer.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qcontainerinfo.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qtaggedpointer.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qobject_impl.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qproperty.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qshareddata.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qpropertyprivate.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qvariant.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qmap.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qshareddata_impl.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qdebug.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qtextstream.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qstringconverter.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qset.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qcontiguouscache.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qsharedpointer.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qsharedpointer_impl.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/QObject \
+		../mobileBrowser/historylist.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o historymodel.o ../mobileBrowser/historymodel.cpp
 
 main.o: ../mobileBrowser/main.cpp ../../../Qt/6.2.1/android_arm64_v8a/include/QtGui/QGuiApplication \
 		../../../Qt/6.2.1/android_arm64_v8a/include/QtGui/qguiapplication.h \
@@ -1592,7 +1944,9 @@ main.o: ../mobileBrowser/main.cpp ../../../Qt/6.2.1/android_arm64_v8a/include/Qt
 		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/QVariant \
 		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/QVariantList \
 		../mobileBrowser/pagemodel.h \
-		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/QAbstractListModel
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/QAbstractListModel \
+		../mobileBrowser/historylist.h \
+		../mobileBrowser/historymodel.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o ../mobileBrowser/main.cpp
 
 pagelist.o: ../mobileBrowser/pagelist.cpp ../mobileBrowser/pagelist.h \
@@ -1868,7 +2222,14 @@ searchengine.o: ../mobileBrowser/searchengine.cpp ../mobileBrowser/searchengine.
 		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qsharedpointer.h \
 		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qsharedpointer_impl.h \
 		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/QVariantList \
-		../mobileBrowser/appengine.h
+		../mobileBrowser/appengine.h \
+		../mobileBrowser/historylist.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/QStandardPaths \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qstandardpaths.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/QFile \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qfile.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qfiledevice.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qiodevice.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o searchengine.o ../mobileBrowser/searchengine.cpp
 
 qrc_qml.o: qrc_qml.cpp 
@@ -1879,6 +2240,12 @@ qrc_icons.o: qrc_icons.cpp
 
 moc_appengine.o: moc_appengine.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_appengine.o moc_appengine.cpp
+
+moc_historylist.o: moc_historylist.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_historylist.o moc_historylist.cpp
+
+moc_historymodel.o: moc_historymodel.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_historymodel.o moc_historymodel.cpp
 
 moc_pagelist.o: moc_pagelist.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_pagelist.o moc_pagelist.cpp

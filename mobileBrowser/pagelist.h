@@ -33,6 +33,8 @@ public:
     void savePage(QString fileName);
     void loadPage(QString fileName);
 
+    QVector<PageItem> getPages();
+
 signals:
     void changeValue();
 

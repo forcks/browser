@@ -43,6 +43,9 @@ void pageList::addPage(QString addr)
     changeValue();
 }
 
+/*
+delete selected page
+*/
 void pageList::deletePage(int id)
 {
     for (int i = 0;i<mItems.count();i++) {
@@ -54,6 +57,9 @@ void pageList::deletePage(int id)
     }
 }
 
+/*
+
+*/
 void pageList::changeAddress(QString addr, int id)
 {
     if(mItems.empty())
@@ -61,6 +67,10 @@ void pageList::changeAddress(QString addr, int id)
     mItems[id].addr = addr;
     changeValue();
 }
+
+/*
+save page (when application is closing)
+*/
 
 void pageList::savePage(QString fileName)
 {
@@ -83,6 +93,10 @@ void pageList::savePage(QString fileName)
 
 }
 
+/*
+load saved page
+*/
+
 void pageList::loadPage(QString fileName)
 {
     auto pathToDir = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation);
@@ -98,6 +112,11 @@ void pageList::loadPage(QString fileName)
             qDebug()<<item.addr;
         }
     }
+}
+
+QVector<PageItem> pageList::getPages()
+{
+    return mItems;
 }
 
 

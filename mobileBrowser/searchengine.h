@@ -17,17 +17,27 @@ public:
 public slots:
     void compliteAddress(QString addr);
     void compliteAddress(QString addr,int activeId);
+    void compliteAddress();
 
-    void createPage();
+    void createPage(QString addr);
     //in temporary memory
     void savePage(QString addr,int activeId);
     //in permanent memory
     void savePageInFile();
 
     void deletePage(int activeId);
+
+    void saveHistory(QString addr);
+    void loadHistory();
+    void deleteSelectedAddrHistory(int id);
+    void clearAllHistory();
+
+    QString getActiveSearcher();
+
 signals:
     void search(QString addr);
     void changeActiveId(int activeId);
+
 
 private:
     explicit SearchEngine(QObject *parent = nullptr);
@@ -41,9 +51,9 @@ private:
 
     QString correctAddress(QString addr);
 
-    QString getActiveSearcher();
 
     QString getStandartFileNameToSavePage();
+    QString getStandartFileNameToSaveHistory();
 };
 
 #endif // SEARCHENGINE_H

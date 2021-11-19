@@ -1,5 +1,9 @@
 <RCC>
     <qresource prefix="/">
         <file>main.qml</file>
+        <file>MainWindow.qml</file>
+        <file>Pages.qml</file>
+        <file>MenuWindow.qml</file>
+        <file>HistoryWindow.qml</file>
     </qresource>
 </RCC>

@@ -16,10 +16,14 @@ public:
 public slots:
     void pages();
     void mainWindow();
+    void menu();
+    void history();
 
 signals:
     void goToPages();
     void goToMainWindow();
+    void goToMenu();
+    void goToHistory();
 
 private:
     explicit AppEngine(QObject *parent = nullptr);

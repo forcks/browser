@@ -8,6 +8,8 @@ CONFIG += c++11
 
 SOURCES += \
         appengine.cpp \
+        historylist.cpp \
+        historymodel.cpp \
         main.cpp \
         pagelist.cpp \
         pagemodel.cpp \
@@ -29,6 +31,8 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 HEADERS += \
     appengine.h \
+    historylist.h \
+    historymodel.h \
     pagelist.h \
     pagemodel.h \
     searchengine.h

@@ -1,18 +1,28 @@
 #include "searchengine.h"
 #include "pagelist.h"
 #include "appengine.h"
+#include "historylist.h"
 
+#include <QStandardPaths>
+#include <QFile>
 
 
 pageList *pageList = &pageList::init();
+historyList *historyList = &historyList::init();
 
 SearchEngine::SearchEngine(QObject *parent) : QObject(parent)
 {
     pageList->loadPage(getStandartFileNameToSavePage());
     //QObject::connect(app, SIGNAL(aboutToQuit()), this, SLOT(savePage()));
+
+    /*
+    is temporary decision
+    */
+
     QTimer *timerForSavePage = new QTimer(this);
     connect(timerForSavePage,&QTimer::timeout,this,&SearchEngine::savePageInFile);
     timerForSavePage->start(1000);
+
 }
 SearchEngine::~SearchEngine()
 {
@@ -39,15 +49,24 @@ void SearchEngine::compliteAddress(QString addr,int activeId){
     appEngine->mainWindow();
 }
 
+void SearchEngine::compliteAddress()
+{
+    QVector<PageItem> item = pageList->getPages();
+    QString addr = item[item.count() - 1].addr;
+    int activeId = item[item.count() - 1].id;
+    addr = correctAddress(addr);
+    emit changeActiveId(activeId);
+    emit search(addr);
+    AppEngine *appEngine = &AppEngine::init();
+    appEngine->mainWindow();
+}
+
 
 /*
 create new page
 */
-void SearchEngine::createPage()
+void SearchEngine::createPage(QString addr)
 {
-    QString addr = correctAddress(getActiveSearcher());
-    //compliteAddress(addr);
-
     pageList->addPage(addr);
 }
 
@@ -78,6 +97,38 @@ void SearchEngine::deletePage(int activeId)
 {
     pageList->deletePage(activeId);
 
+}
+
+/*
+save history to a file
+*/
+void SearchEngine::saveHistory(QString addr)
+{
+    historyList->saveHistory(addr);
+}
+
+/*
+load history from the file
+*/
+void SearchEngine::loadHistory()
+{
+    historyList->loadHistory();
+}
+
+/*
+delete one addresses from history
+*/
+void SearchEngine::deleteSelectedAddrHistory(int id)
+{
+    historyList->deleteSelectedAddrHistory(id);
+}
+
+/*
+clear all history
+*/
+void SearchEngine::clearAllHistory()
+{
+    historyList->clearAllHistory();
 }
 
 
@@ -117,6 +168,8 @@ QString SearchEngine::getStandartFileNameToSavePage()
 {
     return "pages.txt";
 }
+
+
 
 
 

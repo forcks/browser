@@ -13,6 +13,9 @@
 #include "pagelist.h"
 #include "pagemodel.h"
 
+#include "historylist.h"
+#include "historymodel.h"
+
 int main(int argc, char *argv[])
 {
 #if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
@@ -32,6 +35,15 @@ int main(int argc, char *argv[])
 
     pageList *pageList = &pageList::init();
     engine.rootContext()->setContextProperty(QStringLiteral("pagelist"),pageList);
+
+
+    qmlRegisterType<historyModel>("history",1,0,"Historymodel");
+    qmlRegisterUncreatableType<historyList>("history",1,0,"HistoryList",
+                                            QStringLiteral("not"));
+
+
+    historyList *historylist = &historyList::init();
+    engine.rootContext()->setContextProperty(QStringLiteral("historylist"),historylist);
 
 
     const QUrl url(QStringLiteral("qrc:/main.qml"));

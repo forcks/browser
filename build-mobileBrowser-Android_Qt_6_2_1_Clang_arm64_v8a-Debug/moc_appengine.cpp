@@ -22,8 +22,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_AppEngine_t {
-    const uint offsetsAndSize[12];
-    char stringdata0[53];
+    const uint offsetsAndSize[20];
+    char stringdata0[87];
 };
 #define QT_MOC_LITERAL(ofs, len) \
     uint(offsetof(qt_meta_stringdata_AppEngine_t, stringdata0) + ofs), len 
@@ -33,12 +33,17 @@ QT_MOC_LITERAL(0, 9), // "AppEngine"
 QT_MOC_LITERAL(10, 9), // "goToPages"
 QT_MOC_LITERAL(20, 0), // ""
 QT_MOC_LITERAL(21, 14), // "goToMainWindow"
-QT_MOC_LITERAL(36, 5), // "pages"
-QT_MOC_LITERAL(42, 10) // "mainWindow"
+QT_MOC_LITERAL(36, 8), // "goToMenu"
+QT_MOC_LITERAL(45, 11), // "goToHistory"
+QT_MOC_LITERAL(57, 5), // "pages"
+QT_MOC_LITERAL(63, 10), // "mainWindow"
+QT_MOC_LITERAL(74, 4), // "menu"
+QT_MOC_LITERAL(79, 7) // "history"
 
     },
     "AppEngine\0goToPages\0\0goToMainWindow\0"
-    "pages\0mainWindow"
+    "goToMenu\0goToHistory\0pages\0mainWindow\0"
+    "menu\0history"
 };
 #undef QT_MOC_LITERAL
 
@@ -48,26 +53,34 @@ static const uint qt_meta_data_AppEngine[] = {
       10,       // revision
        0,       // classname
        0,    0, // classinfo
-       4,   14, // methods
+       8,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
        0,       // flags
-       2,       // signalCount
+       4,       // signalCount
 
  // signals: name, argc, parameters, tag, flags, initial metatype offsets
-       1,    0,   38,    2, 0x06,    1 /* Public */,
-       3,    0,   39,    2, 0x06,    2 /* Public */,
+       1,    0,   62,    2, 0x06,    1 /* Public */,
+       3,    0,   63,    2, 0x06,    2 /* Public */,
+       4,    0,   64,    2, 0x06,    3 /* Public */,
+       5,    0,   65,    2, 0x06,    4 /* Public */,
 
  // slots: name, argc, parameters, tag, flags, initial metatype offsets
-       4,    0,   40,    2, 0x0a,    3 /* Public */,
-       5,    0,   41,    2, 0x0a,    4 /* Public */,
+       6,    0,   66,    2, 0x0a,    5 /* Public */,
+       7,    0,   67,    2, 0x0a,    6 /* Public */,
+       8,    0,   68,    2, 0x0a,    7 /* Public */,
+       9,    0,   69,    2, 0x0a,    8 /* Public */,
 
  // signals: parameters
     QMetaType::Void,
     QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
 
  // slots: parameters
+    QMetaType::Void,
+    QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
 
@@ -82,8 +95,12 @@ void AppEngine::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, v
         switch (_id) {
         case 0: _t->goToPages(); break;
         case 1: _t->goToMainWindow(); break;
-        case 2: _t->pages(); break;
-        case 3: _t->mainWindow(); break;
+        case 2: _t->goToMenu(); break;
+        case 3: _t->goToHistory(); break;
+        case 4: _t->pages(); break;
+        case 5: _t->mainWindow(); break;
+        case 6: _t->menu(); break;
+        case 7: _t->history(); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
@@ -102,6 +119,20 @@ void AppEngine::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, v
                 return;
             }
         }
+        {
+            using _t = void (AppEngine::*)();
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&AppEngine::goToMenu)) {
+                *result = 2;
+                return;
+            }
+        }
+        {
+            using _t = void (AppEngine::*)();
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&AppEngine::goToHistory)) {
+                *result = 3;
+                return;
+            }
+        }
     }
     (void)_a;
 }
@@ -113,8 +144,8 @@ const QMetaObject AppEngine::staticMetaObject = { {
     qt_static_metacall,
     nullptr,
 qt_incomplete_metaTypeArray<qt_meta_stringdata_AppEngine_t
-, QtPrivate::TypeAndForceComplete<AppEngine, std::true_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>
-, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>
+, QtPrivate::TypeAndForceComplete<AppEngine, std::true_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>
+, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>
 
 
 >,
@@ -141,13 +172,13 @@ int AppEngine::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 4)
+        if (_id < 8)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 4;
+        _id -= 8;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 4)
+        if (_id < 8)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 4;
+        _id -= 8;
     }
     return _id;
 }
@@ -162,6 +193,18 @@ void AppEngine::goToPages()
 void AppEngine::goToMainWindow()
 {
     QMetaObject::activate(this, &staticMetaObject, 1, nullptr);
+}
+
+// SIGNAL 2
+void AppEngine::goToMenu()
+{
+    QMetaObject::activate(this, &staticMetaObject, 2, nullptr);
+}
+
+// SIGNAL 3
+void AppEngine::goToHistory()
+{
+    QMetaObject::activate(this, &staticMetaObject, 3, nullptr);
 }
 QT_WARNING_POP
 QT_END_MOC_NAMESPACE
