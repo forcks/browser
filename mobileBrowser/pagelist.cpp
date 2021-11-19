@@ -8,6 +8,7 @@
 #include <QStandardPaths>
 #include <QFile>
 
+#include <QtAlgorithms>
 
 
 pageList::pageList(QObject *parent) : QObject(parent)
@@ -37,10 +38,18 @@ bool pageList::setItemAt(int index, const PageItem &item)
 void pageList::addPage(QString addr)
 {
     PageItem item;
-    item.id = mItems.isEmpty() ? 0 : mItems[mItems.count()-1].id+1;
+    int moreValues = 0;
+    for(int i = 0;i<mItems.count();i++){
+        if(moreValues <= mItems[i].id){
+            moreValues = mItems[i].id+1;
+            qDebug()<<moreValues;
+        }
+    }
+    item.id = moreValues;
     item.addr = addr;
     mItems.append(item);
     changeValue();
+    qDebug()<<item.id;
 }
 
 /*
@@ -64,8 +73,12 @@ void pageList::changeAddress(QString addr, int id)
 {
     if(mItems.empty())
         mItems.append({0,""});
-    mItems[id].addr = addr;
-    changeValue();
+    for(int i = 0;i<mItems.count();i++){
+        if(id == mItems[i].id){
+            mItems[i].addr = addr;
+            changeValue();
+        }
+    }
 }
 
 /*

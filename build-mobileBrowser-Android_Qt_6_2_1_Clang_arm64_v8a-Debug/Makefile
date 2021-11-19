@@ -2040,7 +2040,8 @@ pagelist.o: ../mobileBrowser/pagelist.cpp ../mobileBrowser/pagelist.h \
 		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/QFile \
 		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qfile.h \
 		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qfiledevice.h \
-		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qiodevice.h
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/qiodevice.h \
+		../../../Qt/6.2.1/android_arm64_v8a/include/QtCore/QtAlgorithms
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o pagelist.o ../mobileBrowser/pagelist.cpp
 
 pagemodel.o: ../mobileBrowser/pagemodel.cpp ../mobileBrowser/pagemodel.h \
