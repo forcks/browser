@@ -23,7 +23,7 @@ GridLayout{
         Layout.row: 0
 
         background: Rectangle{
-            color: "#E0FFFF"
+            color: "#d9ffe8"
             radius: 8
         }
 
@@ -44,7 +44,7 @@ GridLayout{
         Layout.row: 1
 
         background: Rectangle{
-            color: "#E0FFFF"
+            color: "#d9ffe8"
             radius: 8
         }
 

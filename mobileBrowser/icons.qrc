@@ -4,5 +4,6 @@
         <file>res/home.png</file>
         <file>res/page.png</file>
         <file>res/plus.png</file>
+        <file>res/square.png</file>
     </qresource>
 </RCC>

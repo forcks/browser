@@ -21,7 +21,7 @@ public slots:
 
     void createPage(QString addr);
     //in temporary memory
-    void savePage(QString addr,int activeId);
+    void savePage(QString addr,int activeId,QString title);
     //in permanent memory
     void savePageInFile();
 
@@ -34,9 +34,12 @@ public slots:
 
     QString getActiveSearcher();
 
+    void startApp();
+
 signals:
     void search(QString addr);
     void changeActiveId(int activeId);
+    void getNumberPages(int numberPages);
 
 
 private:

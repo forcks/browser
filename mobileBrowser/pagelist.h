@@ -12,6 +12,7 @@
 struct PageItem{
     int id;
     QString addr;
+    QString title;
 };
 
 class pageList : public QObject
@@ -27,13 +28,15 @@ public:
     bool setItemAt(int index, const PageItem &item);
     void addPage(QString addr);
     void deletePage(int id);
-    void changeAddress(QString addr, int id);
+    void changeAddress(QString addr, int id,QString title);
 
     //in permanent memory
     void savePage(QString fileName);
     void loadPage(QString fileName);
 
     QVector<PageItem> getPages();
+
+    int getNumberPages();
 
 signals:
     void changeValue();

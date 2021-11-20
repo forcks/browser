@@ -36,6 +36,7 @@ void SearchEngine::compliteAddress(QString addr)
 {
     addr = correctAddress(addr);
     emit search(addr);
+    emit getNumberPages(pageList->getNumberPages());
 }
 
 /*
@@ -68,15 +69,16 @@ create new page
 void SearchEngine::createPage(QString addr)
 {
     pageList->addPage(addr);
+    emit getNumberPages(pageList->getNumberPages());
 }
 
 /*
 save page in temporary memory
 */
 
-void SearchEngine::savePage(QString addr,int activeId)
+void SearchEngine::savePage(QString addr,int activeId,QString title)
 {
-    pageList->changeAddress(addr,activeId);
+    pageList->changeAddress(addr,activeId,title);
 }
 
 /*
@@ -86,7 +88,7 @@ save pages in permanently memory
 void SearchEngine::savePageInFile()
 {
     qDebug()<<"save";
-    pageList->savePage(getStandartFileNameToSavePage());
+    emit pageList->savePage(getStandartFileNameToSavePage());
 }
 
 
@@ -96,7 +98,7 @@ delete page in temporary memory
 void SearchEngine::deletePage(int activeId)
 {
     pageList->deletePage(activeId);
-
+    emit getNumberPages(pageList->getNumberPages());
 }
 
 /*
@@ -113,6 +115,7 @@ load history from the file
 void SearchEngine::loadHistory()
 {
     historyList->loadHistory();
+    emit getNumberPages(pageList->getNumberPages());
 }
 
 /*
@@ -162,6 +165,11 @@ QString SearchEngine::correctAddress(QString addr)
 QString SearchEngine::getActiveSearcher()
 {
     return "google.com";
+}
+
+void SearchEngine::startApp()
+{
+    emit getNumberPages(pageList->getNumberPages());
 }
 
 QString SearchEngine::getStandartFileNameToSavePage()

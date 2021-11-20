@@ -22,14 +22,14 @@ GridLayout{
             anchors.fill: parent
             ListView{
                 anchors.fill:parent
-                verticalLayoutDirection: ListView.BottomToTop
+                //verticalLayoutDirection: ListView.BottomToTop
                 model: Historymodel{
                     list: historylist
                 }
                 spacing: parent.height/50
                 delegate: Rectangle{
                     width: historyZone.width
-                    height: historyZone.height/20
+                    height: historyZone.height/17
                     GridLayout{
                         width: parent.width/1.2
                         height: parent.height
@@ -42,7 +42,7 @@ GridLayout{
 
                             text:model.addr
                             background: Rectangle{
-                                color: "#D3D3D3"
+                                color: "#d9ffe8"
                                 radius: 8
                             }
 
@@ -62,7 +62,7 @@ GridLayout{
                                 anchors.centerIn: parent
                             }
                             background: Rectangle{
-                                color: "#D3D3D3"
+                                color: "#d9ffe8"
                                 radius: 8
                             }
 
@@ -85,7 +85,7 @@ GridLayout{
         Layout.row: 1
 
         background: Rectangle{
-            color: "#E0FFFF"
+            color: "#d9ffe8"
             radius: 8
         }
 
@@ -115,7 +115,7 @@ GridLayout{
         Layout.row: 1
 
         background: Rectangle{
-            color: "#E0FFFF"
+            color: "#d9ffe8"
             radius: 8
         }
 

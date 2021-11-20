@@ -18,7 +18,8 @@ public:
 
     enum{
         IdRole = Qt::UserRole,
-        AddrRole
+        AddrRole,
+        TitleRole
     };
 
     // Basic functionality:

@@ -14,6 +14,10 @@ ApplicationWindow {
     visible: true
     title: qsTr("Hello World")
 
+    onActiveChanged: {
+        searchEngine.startApp();
+    }
+
 
     StackView{
         id:mainStackView

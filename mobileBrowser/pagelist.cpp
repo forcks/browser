@@ -28,7 +28,8 @@ bool pageList::setItemAt(int index, const PageItem &item)
 
     const PageItem &oldItem = mItems.at(index);
     if (item.id == oldItem.id
-            && item.addr == oldItem.addr)
+            && item.addr == oldItem.addr
+            && item.title == item.title)
         return false;
 
     mItems[index] = item;
@@ -69,13 +70,14 @@ void pageList::deletePage(int id)
 /*
 
 */
-void pageList::changeAddress(QString addr, int id)
+void pageList::changeAddress(QString addr, int id,QString title)
 {
     if(mItems.empty())
         mItems.append({0,""});
     for(int i = 0;i<mItems.count();i++){
         if(id == mItems[i].id){
             mItems[i].addr = addr;
+            mItems[i].title = title;
             changeValue();
         }
     }
@@ -130,6 +132,11 @@ void pageList::loadPage(QString fileName)
 QVector<PageItem> pageList::getPages()
 {
     return mItems;
+}
+
+int pageList::getNumberPages()
+{
+    return mItems.count();
 }
 
 

@@ -18,19 +18,21 @@ GridLayout{
         }
     }
 
+
+
     Button{
         font.pointSize: height/2.5
 
         text: qsTr("<")
 
-        Layout.preferredHeight: browser.height/18
+        Layout.preferredHeight: browser.height/20
         Layout.preferredWidth: height
 
         Layout.column: 0
         Layout.row: 0
 
         background: Rectangle{
-            color: "#E0FFFF"
+            color: "#d9ffe8"
             radius: 8
         }
 
@@ -44,14 +46,14 @@ GridLayout{
 
         text: qsTr(">")
 
-        Layout.preferredHeight: browser.height/18
+        Layout.preferredHeight: browser.height/20
         Layout.preferredWidth: height
 
         Layout.column: 1
         Layout.row: 0
 
         background: Rectangle{
-            color: "#E0FFFF"
+            color: "#d9ffe8"
             radius: 8
         }
 
@@ -76,7 +78,7 @@ GridLayout{
         Layout.row: 0
 
         background: Rectangle{
-            color: "#E0FFFF"
+            color: "#d9ffe8"
             radius: 8
         }
 
@@ -85,14 +87,14 @@ GridLayout{
     Button{
         font.pointSize: height/2.5
 
-        Layout.preferredHeight: browser.height/18
+        Layout.preferredHeight: browser.height/20
         Layout.preferredWidth: height
 
         Layout.column: 3
         Layout.row: 0
 
         background: Rectangle{
-            color: "#E0FFFF"
+            color: "#d9ffe8"
             radius: 8
         }
         Image {
@@ -134,9 +136,14 @@ GridLayout{
 
         onUrlChanged: {
             searchTextField.text = mainWebView.url
-            searchEngine.savePage(mainWebView.url,_activeId)
+            searchEngine.savePage(mainWebView.url,_activeId,mainWebView.title)
             searchEngine.saveHistory(mainWebView.url);
+            //console.log(mainWebView.title)
         }
+        onTitleChanged: {
+            searchEngine.savePage(mainWebView.url,_activeId,mainWebView.title)
+        }
+
 
         Connections{
             target: searchEngine
@@ -149,14 +156,14 @@ GridLayout{
     Button{
         font.pointSize: height/2.5
 
-        Layout.preferredHeight: browser.height/18
+        Layout.preferredHeight: browser.height/20
         Layout.preferredWidth: height
 
         Layout.column: 3
         Layout.row: 3
 
         background: Rectangle{
-            color: "#E0FFFF"
+            color: "#d9ffe8"
             radius: 8
         }
 
@@ -183,7 +190,7 @@ GridLayout{
 
         text: qsTr("menu")
 
-        Layout.preferredHeight: browser.height/18
+        Layout.preferredHeight: browser.height/20
         Layout.fillWidth: true
 
         Layout.column: 1
@@ -191,7 +198,7 @@ GridLayout{
         Layout.columnSpan: 2
 
         background: Rectangle{
-            color: "#E0FFFF"
+            color: "#d9ffe8"
             radius: 8
         }
 
@@ -201,32 +208,41 @@ GridLayout{
     }
 
     Button{
+        id:pagesButton
         font.pointSize: height/2.5
 
-        Layout.preferredHeight: browser.height/18
+        text: qsTr("1")
+
+        Layout.preferredHeight: browser.height/20
         Layout.preferredWidth: height
 
         Layout.column: 0
         Layout.row: 3
 
         background: Rectangle{
-            color: "#E0FFFF"
+            color: "#d9ffe8"
             radius: 8
         }
 
         Image {
-            source: "qrc:/res/page.png"
+            source: "qrc:/res/square.png"
             fillMode: Image.PreserveAspectFit
 
-            width: parent.width/1.4
-            height: parent.height/1.4
+            width: parent.width/1.8
+            height: parent.height/1.8
 
             anchors.centerIn: parent
         }
 
-
         onClicked: {
             appEngine.pages()
+        }
+
+        Connections{
+            target: searchEngine
+            function onGetNumberPages(numberPages){
+                pagesButton.text = numberPages
+            }
         }
     }
 

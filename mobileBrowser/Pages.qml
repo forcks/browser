@@ -25,14 +25,14 @@ GridLayout{
             anchors.fill: parent
             ListView{
                 anchors.fill: parent
-                verticalLayoutDirection: ListView.BottomToTop
+                //verticalLayoutDirection: ListView.BottomToTop
                 model: Pagemodel{
                     list: pagelist
                 }
                 spacing: parent.height/50
                 delegate: Rectangle{
                     width: pageZone.width
-                    height: pageZone.height/20
+                    height: pageZone.height/17
                     GridLayout{
                         width: parent.width/1.2
                         height: parent.height
@@ -45,9 +45,9 @@ GridLayout{
                         Button{
                             Layout.fillHeight: true
                             Layout.preferredWidth: parent.width/4 * 3
-                            text:model.addr
+                            text: model.title != "" ? model.title : "GOOGLE"
                             background: Rectangle{
-                                color: "#D3D3D3"
+                                color: "#d9ffe8"
                                 radius: 8
                             }
 
@@ -66,7 +66,7 @@ GridLayout{
                                 anchors.centerIn: parent
                             }
                             background: Rectangle{
-                                color: "#D3D3D3"
+                                color: "#d9ffe8"
                                 radius: 8
                             }
 
@@ -92,7 +92,7 @@ GridLayout{
         Layout.columnSpan: 2
 
         background: Rectangle{
-            color: "#E0FFFF"
+            color: "#d9ffe8"
             radius: 8
         }
 

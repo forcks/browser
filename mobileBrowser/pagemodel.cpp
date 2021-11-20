@@ -30,6 +30,8 @@ QVariant pageModel::data(const QModelIndex &index, int role) const
         return QVariant(item.addr);
     case IdRole:
         return  QVariant(item.id);
+    case TitleRole:
+        return QVariant(item.title);
     }
 
     return QVariant();
@@ -46,6 +48,9 @@ bool pageModel::setData(const QModelIndex &index, const QVariant &value, int rol
         break;
     case IdRole:
         item.id = value.toInt();
+        break;
+    case TitleRole:
+        item.title = value.toString();
         break;
     }
 
@@ -69,6 +74,7 @@ QHash<int, QByteArray> pageModel::roleNames() const
     QHash<int,QByteArray> names;
     names[IdRole] = "id";
     names[AddrRole] = "addr";
+    names[TitleRole] = "title";
     return names;
 }
 
